@@ -3,5 +3,7 @@ $source=$ua->get("$target/index.php?option=com_users&view=registration")->decode
 if ($source =~ /registration.register/g or $source =~ /jform_password2/g or $source =~ /jform_email2/g) {
 	dprint("Checking user registration");
 	tprint("registration is enabled\n$target/index.php?option=com_users&view=registration");
+	$result{'register_page'} .= $split_str;
+	$result{'register_page'} .= "$target/index.php?option=com_users&view=registration";
 }
 #end registration

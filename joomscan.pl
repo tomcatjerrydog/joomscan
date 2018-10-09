@@ -43,6 +43,12 @@ sub interrupt {
     print color("reset");
     exit 0;
 }
+
+%result = ('waf'=>'','cms_name'=>'','cms_ver'=>'','core_vul'=>'',
+			'plugin'=>'','plugin_vul'=>'','register_page'=>'','admin_page'=>'',
+			'interest_file'=>'','dir_list'=>'','wrong_config'=>'');
+$split_str = "\n****************************************************************\n";
+
 do "$mepath/core/header.pl";
 do "$mepath/core/main.pl";
 do "$mepath/modules/waf_detector.pl";
@@ -62,5 +68,5 @@ do "$mepath/modules/reg.pl";
 do "$mepath/modules/configfinder.pl";
 do "$mepath/exploit/components.pl" if($components==1);
 
-do "$mepath/core/report.pl";
+do "$mepath/core/report_json.pl";
 print color("reset");

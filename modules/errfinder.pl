@@ -6,6 +6,8 @@ foreach $er(@error){
     if (($content_type, $doc_length, $mod_time, $expires, $server) =head("$target/$er")){
         if($content_type !~ m/text\/html/i){
             tprint("$er path :  $target/$er\n");
+            $result{'interest_file'} .= $split_str;
+            $result{'interest_file'} .= "$target/$er";
            $ertf=1;
         }
     }

@@ -10,10 +10,11 @@ if ($response->status_line =~ /200/g and $content_type =~ /text\/plain/g) {
 	foreach my $line( @lines ) { 
 		if($line =~ /llow:/g){
 			$between=substr($line, index($line, ': ')+2, 99999);
-			$probot.="$target$between\n";
+			$probot.="$split_str$target$between";
 		}
 	}
 	tprint("robots.txt is found\npath : $target/robots.txt \n\nInteresting path found from robots.txt\n$probot");
+	$result{'interest_file'} .= $probot;
 }else{
 	fprint("robots.txt is not found");
 }

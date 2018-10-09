@@ -50,6 +50,8 @@ foreach $plink(@plinks){
          $pathdis =~ s/<\/strong>//g;
         dprint("Full Path Disclosure (FPD)");
         tprint("Full Path Disclosure (FPD) in '$target/$plink' : $pathdis\n");
+        $result{'interest_file'} .= $split_str;
+        $result{'interest_file'} .= "Full Path Disclosure (FPD) in '$target/$plink' : $pathdis\n";
         goto pend;
     }
 }

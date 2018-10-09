@@ -15,6 +15,8 @@ foreach $admin(@admins){
 
 if($amtf==1){
     tprint("Admin page : $target/$adming/");
+    $result{'admin_page'} .= $split_str;
+    $result{'admin_page'} .= "$target/$adming";
 }else{
     fprint("Admin page not found");
 }

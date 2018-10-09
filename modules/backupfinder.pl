@@ -6,6 +6,7 @@ foreach $back(@backups){
     if (($content_type, $doc_length, $mod_time, $expires, $server) =head("$target/$back")){
         if($content_type !~ m/text\/html/i){
             tprint("Backup file is found \nPath : $target/$back\n");
+            $result{'interest_file'} .= "$split_str$target/$back";
            $btf=1;
         }
     }

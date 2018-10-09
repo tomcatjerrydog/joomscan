@@ -6,6 +6,8 @@ foreach $config(@configs){
 	$source=$ua->get("$target/$config")->decoded_content;
 	if($source =~ m/Apache Server Information/i || $source =~ m/Server Root/i || $source =~ m/Apache Status/i){
 		tprint("Interesting file is found \n$target/$config");
+		$result{'wrong_config'} .= $split_str;
+		$result{'wrong_config'} .= "$target/$config";
 		$ctf=1;
 	}
 }

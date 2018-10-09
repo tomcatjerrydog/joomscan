@@ -14,6 +14,8 @@ foreach $dir(@dirl){
 if($ctf==1){
 	dprint("Checking Directory Listing");
 	tprint("directory has directory listing : \n$cnftmp");
+	$result{'dir_list'} .= $split_str;
+	$result{'dir_list'} .= "$cnftmp\n"
 }
 
 #end Directory Listing

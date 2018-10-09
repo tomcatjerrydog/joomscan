@@ -9,6 +9,8 @@ foreach $config(@configs){
     $source=$ua->get("$target/$config")->decoded_content;
     if($source =~ m/public \$ftp_pass/i || $source =~ m/\$dbtype/i || $source =~ m/force_ssl/i || $source =~ m/mosConfig_secret/i || $source =~ m/mosConfig_dbprefix/i ){
         $cnftmp="$cnftmp\Readable config file is found \n config file path : $target/$config\n";
+        $result{'interest_file'} .= $split_str;
+        $result{'interest_file'} .= "$target/$config";
         $ctf=1;
     }
 }
