@@ -1,3 +1,8 @@
+tomcatjerrydog JoomScan 1.0.1
+============
+* change output from plain text to json
+* change module component.pl to find more components in administrator/components/
+
 OWASP JoomScan 0.0.7 [Self Challenge]
 ============
 * com_joomanager exploiter removed
