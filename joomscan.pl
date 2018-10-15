@@ -21,10 +21,10 @@
 #
 
 
-$author="Mohammad Reza Espargham , Ali Razmjoo";$author.="";
-$version="0.0.7";$version.="";
-$codename="Self Challenge";$codename.="";
-$update="2018/09/23";$update.="";
+$author="Mohammad Reza Espargham , Ali Razmjoo";$author.="big brother";
+$version="1.0.1";$version.="";
+$codename="";$codename.="";
+$update="2018/10/08";$update.="";
 $mmm=0;
 
 system(($^O eq 'MSWin32') ? 'cls' : 'clear');
@@ -69,4 +69,3 @@ do "$mepath/modules/configfinder.pl";
 do "$mepath/exploit/components.pl" if($components==1);
 
 do "$mepath/core/report_json.pl";
-print color("reset");
